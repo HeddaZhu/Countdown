@@ -1,32 +1,23 @@
-//根据天，时，分，秒的ID找到相对应的元素
 
-var time_day = document.getElementById("times_day");
-
-var time_hour = document.getElementById("times_hour");
-
-var time_minute = document.getElementById("times_minute");
-
-var time_second = document.getElementById("times_second");
-
-
-
-
- var time_end = 20*1000;
-  var time_distance = time_end;
-setTimeout("count_down()",1000);//设置每一秒调用一次倒计时函数 
+//dom节点
+var times = document.getElementById("times");
+//时间量
+ var time_distance = 20*1000;
+//警告时间
+ var time_warn = 10*1000;
+setTimeout(function(){count_down(time_distance,times,time_warn)},1000);//设置每一秒调用一次倒计时函数 
 
 //定义倒计时函数
 
-function count_down(){ 
+function count_down(time_distance,times,time_warn){ 
 
 
-   time_distance -= 1000;  
 
    var int_day, int_hour, int_minute, int_second;   
 
  if(time_distance >= 0){
- 	 if(time_distance < 10*1000)  {
- 		 document.getElementById("times").style.backgroundColor="#ff0000";
+ 	 if(time_distance < time_warn)  {
+ 		 times.style.backgroundColor="#ff0000";
 
  	} 
 
@@ -85,19 +76,12 @@ function count_down(){
  
 
 // 显示    
-
-time_day.innerHTML = int_day;
-
-time_hour.innerHTML = int_hour; 
-
-time_minute.innerHTML = int_minute; 
-
-time_second.innerHTML = int_second;
-
-setTimeout("count_down()",1000);
+times.innerHTML = '距离活动结束还有：'+int_day+' 天 '+int_hour+' 时 '+int_minute+' 分 '+int_second+' 秒  ';
+time_distance -= 1000;
+setTimeout(function(){count_down(time_distance,times,time_warn)},1000);
 
     }else{    
-document.getElementById("times").innerHTML = "It's over";
+times.innerHTML = "It's over";
 
    }
 
