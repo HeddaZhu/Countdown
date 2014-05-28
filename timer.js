@@ -19,11 +19,8 @@ setTimeout("count_down()",1000);//设置每一秒调用一次倒计时函数
 
 function count_down(){ 
 
-   // var time_now = new Date();  // 获取当前时间
-// 
-   // time_now = time_now.getTime();
 
-   time_distance -= 1000;  // 时间差：活动结束时间减去当前时间   
+   time_distance -= 1000;  
 
    var int_day, int_hour, int_minute, int_second;   
 

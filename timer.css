@@ -1,10 +1,8 @@
 
 #times{
-	border:1px;
-	border-color:#999999;
-	border-style:solid; 
-	background:#333333; 
-	color:#FFFFFF; 
+	border:1px,solid,#999;
+	background:#333; 
+	color:#FFF; 
 	width:500px; 
 	height:40px; 
 	line-height:40px; 
